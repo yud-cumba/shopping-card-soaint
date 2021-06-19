@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { Router } from '@reach/router';
+import { Home } from './views/Home';
+import { Detail } from './views/Detail';
+import { GlobalStyle } from './styles/GlobalStyles';
+import { Header } from './components/Header'
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <GlobalStyle />
+      <Header />
+      <Router>
+        <Home path="/" />
+        <Detail path="/detail/:detailId" />
+      </Router>
+    </Fragment>
   );
-}
+};
 
 export default App;
