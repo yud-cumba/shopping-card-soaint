@@ -5,11 +5,10 @@ import Context from './Context'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <React.StrictMode>
-      <Context.Provider>
-        <App />
-      </Context.Provider>
-  </React.StrictMode>,
+
+  <Context.Provider>
+    <App />
+  </Context.Provider>,
   document.getElementById('root')
 );
 
