@@ -5,7 +5,6 @@ export function useFilterProducts(initial, filter) {
     return initial;
   })
   useEffect(function () {
-      console.log('filter', filter)
       if(!!filter){
         setFilterProducts(initial.filter((e) => e.title.toLowerCase().includes(filter)))
       } else{ 
