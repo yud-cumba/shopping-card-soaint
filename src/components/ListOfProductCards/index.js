@@ -9,7 +9,7 @@ import { Div } from './styles';
 export const ListOfProductCards = ({ search }) => {
   const { products, loading, error } = useProductsData();
   const { filterProducts }= useFilterProducts(products, search)
-  if (error) return <div>{error}</div>;
+  if (error) return <Error type='error'/>;
   const List = filterProducts.length?  <Div>{filterProducts.map((product) => <ProductCard key={product.id} product={product}/>)}</Div>
   : <Error type='nodata'/>
   return (
