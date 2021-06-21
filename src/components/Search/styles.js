@@ -8,6 +8,7 @@ export const Input = styled.input`
   border-radius: 5px;
   padding: 0 5px;
   @media only screen and (max-width: 600px){
+      width: 70%;
   }
 `
 
