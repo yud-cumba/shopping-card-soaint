@@ -4,7 +4,7 @@ import ReactLoading from 'react-loading';
 export const Loading = ({ product }) => {
   return (
     <Page>
-        <ReactLoading type='spin' color='purple' height={100} width={100} />
+      <ReactLoading type='spin' color='purple' height={100} width={100} />
     </Page>
   );
 };
