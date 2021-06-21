@@ -6,6 +6,6 @@ export const Div = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100vw;
-  margin-top: 50px;
+  margin-top: 70px;
   padding: 30px;
 `

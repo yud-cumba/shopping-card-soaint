@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getProducts, getProductsDetail } from '../api/products';
-export function useProductsData() {
+export function useProductsData(filter) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError ]= useState(false);
@@ -8,8 +8,8 @@ export function useProductsData() {
     setLoading(true);
     async function fetchData() {
       try{
-      const products = await getProducts();
-      setProducts(products);
+      let allProducts = await getProducts();
+      setProducts(allProducts);
       } catch (e){
         setError(e)
       } finally{
@@ -17,7 +17,7 @@ export function useProductsData() {
       }
     }
     fetchData();
-  }, []);
+  }, [filter]);
 
   return { products, loading, error };
 }

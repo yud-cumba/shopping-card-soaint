@@ -1,15 +1,17 @@
-import React from 'react'
-import { Link, Nav } from './styles'
-import { MdHome } from 'react-icons/md'
-import { Favs } from '../Favs'
-
-const SIZE = '32px'
-
-export const Header= () => {
+import React from 'react';
+import { Link, Nav, Logo } from './styles';
+import { Favs } from '../Favs';
+export const Header = () => {
   return (
     <Nav>
-      <Link to='/'><MdHome size={SIZE} /></Link>
-      <Favs/>
+      <Link to="/">
+        <Logo
+          src="https://fontmeme.com/permalink/210620/c2571cf64cb7e23a7fb767bc58a79521.png"
+          alt="super-mario-font"
+          border="0"
+        ></Logo>
+      </Link>
+      <Favs />
     </Nav>
-  )
-}
+  );
+};

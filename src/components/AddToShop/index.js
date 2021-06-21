@@ -1,6 +1,6 @@
 import React, { useContext, useState, Fragment } from 'react';
 import { MdAddShoppingCart, MdCheckCircle } from 'react-icons/md';
-import { Button } from './styles';
+import { Button, Added} from './styles';
 import { Context } from '../../Context';
 
 export const AddToShop = ({ product }) => {
@@ -15,9 +15,10 @@ export const AddToShop = ({ product }) => {
   return (
     <Fragment>
       { show ? (
-        <div>
+        <Added>
           <MdCheckCircle size={'32px'} color="green" />
-        </div>
+          Agregado Al carrito
+        </Added>
       ) : (
         <Button onClick={() => addNewShop()}>
           <MdAddShoppingCart size={'32px'} />

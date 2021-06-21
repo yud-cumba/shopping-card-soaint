@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {Fragment } from 'react';
 import { ProductCard } from '../ProductCard';
 import { useProductsData } from '../../hooks/useProductsData';
+import { useFilterProducts } from '../../hooks/useFilterProducts';
+import { Loading } from '../Loading';
 import { Div } from './styles';
 
-export const ListOfProductCards = () => {
+export const ListOfProductCards = ({ search }) => {
   const { products, loading, error } = useProductsData();
-
+  const { filterProducts }= useFilterProducts(products, search)
   if (error) return <div>{error}</div>;
+  const List = filterProducts.length?  <Div>{filterProducts.map((product) => <ProductCard key={product.id} product={product}/>)}</Div>
+  : <div>No hay datos</div>
   return (
-    <Div>
+    <Fragment>
       {loading ? (
-        <div key="loading">Cargando ...</div>
-      ) : (
-        products.map((product) => <ProductCard key={product.id} product={product} />)
-      )}
-    </Div>
+        <Loading/>
+      ) : List }
+    </Fragment>
   );
 };

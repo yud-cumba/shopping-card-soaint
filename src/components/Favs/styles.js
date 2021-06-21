@@ -7,13 +7,33 @@ export const Tooltip = styled.div`
   height: auto;
   background-color: white;
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 10px;
   border-radius: 5px;
   padding: 8px;
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  &:before{
+    border: 25px solid white;
+    content: '';
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    //top: -20px;
+    top: -50px;
+    right: 15px;
+  }
 `;
-
+export const Div = styled.div`
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  border-bottom: 2px solid black;
+`;
+export const Img= styled.img`
+  margin-right: 10px;
+  width: 40px;
+`;
 export const Link = styled(LinkRouter)`
   display: flex;
   flex-direction: column;
@@ -29,4 +49,8 @@ export const MyFavs = styled.div`
   display: flex;
   width: 150px;
   cursor:pointer;
+  @media only screen and (max-width: 600px){
+    padding: 5px;
+    text-align: center;
+  }
 `

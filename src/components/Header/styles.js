@@ -11,7 +11,14 @@ export const Nav = styled.nav`
   z-index: 1000;
   padding: 10px;
 `
-
+export const Logo = styled.img`
+  padding: 10px;
+  height: 50px;
+  @media only screen and (max-width: 600px){
+    padding: 5px;
+    height: 30px;
+  }
+`
 export const Link = styled(LinkRouter)`
   align-items: center;
   color: #888;
@@ -22,13 +29,5 @@ export const Link = styled(LinkRouter)`
 
   &[aria-current] {
     color: #000;
-
-    &:after {
-      content: '·';
-      position: absolute;
-      bottom: 0;
-      font-size: 34px;
-      line-height: 20px;
-    }
   }
 `
